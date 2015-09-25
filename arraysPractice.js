@@ -363,7 +363,7 @@ objects until you find Tyler's account (use tylermcginnis33@gmail.com to find hi
 Once you find the particular index he's located in, delete him from the array.*/
 
 for (var i = 0; i < users.length; i++) {
-    if (user[i].email === 'tylermcginnis33@gmail.com') {
+    if (users[i].email === 'tylermcginnis33@gmail.com') {
            users.splice(i, 1);
     }
 }
