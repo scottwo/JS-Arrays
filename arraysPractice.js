@@ -96,10 +96,10 @@ var numbers = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
 //Above you're given a function that will return a random number between 0 and 30, and an array full of numbers. Your job is to write a function named finder that will get a random number, then loop through the array to see if that random number is in the array. If it is, return true, if it's not, return false
 
 function finder () {
-  var x = getRandomArbitrary();
+  //var x = getRandomArbitrary();
   var found = false;
   for (var i = 0; i < numbers.length; i++) {
-    if (x === numbers[i]) {
+    if (getRandomArbitrary() === numbers[i]) {
       found = true;
     　return true;
       break;
@@ -125,10 +125,15 @@ function reverse(str) {
     return returnStr;
 }
 
+//turn into array at every character, reverse it, then join it again into a string.
+var reverse = function(str) {
+    return str.split("").reverse().join("");   
+}
+
 //Next Problem
 
 
-var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
+var myGroceryList = ['chips', 'pizza', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 /*
   Here we're going to write a function that mimics going shopping and checking things off of our grocery list,
   and adding new items to our list. 
@@ -146,6 +151,7 @@ function removeItem(list, item) {
     for (var i = 0; i < list.length; i++) {
         if (list[i] === item) {
             list.splice(i, 1);
+            i--;
         }
     }
     return list;
@@ -183,9 +189,11 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 //array after adding ten to each item in numbers. *Verify your answer is correct. --> [15, 19, 26, 29, 35, 44, 58]
 
 function addTen(nums) {
+    var newArr = [];
     for (var i = 0; i < nums.length; i++) {
-        nums[i] = (nums[i] / 1) + 10;   
+        newArr[i] = (nums[i] / 1) + 10;   
     }
+    return newArr;
 }
 
 //Next Problem
@@ -223,7 +231,7 @@ function longer(arr1, arr2) {
 function both (arr1, arr2) {
     var arrBoth = [];
     for (var i = 0; i < arr1.length; i++) {
-        for (var j = 0; j < arr2.length; j++) {
+        for (var j = 0; j < arr2.length; j++) {     //I could have only had one for() with &&
             if (arr1[i] === arr2[j]) {
                 arrBoth.push(arr2[j]);
             }
@@ -332,7 +340,6 @@ var user1 = {
 };
 
 users = [
-    
     {
         name: 'Tyler McGinnis',
         email: 'tylermcginnis33@gmail.com',
@@ -351,7 +358,6 @@ users = [
         password: 'MIB',
         username: 'AgentJ'
     }
-    
 ];
 
 /*Now you have a very common data structure. Twitter is a good use case.
